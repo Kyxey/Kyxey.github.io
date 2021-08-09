@@ -10,12 +10,20 @@
 <body>
     <script>
     $('body').terminal({
-        hello: function(what) {
-            this.echo('Hello, ' + what +
-                '. Wellcome to this terminal.');
+        help: function() {
+            const cmds = {
+                bio: "Get a brief biography about me",
+                edu: "Get my educational background",
+                exp: "Get my work experiences",
+                help: "Get a list of the available commands",
+                skills: "Get a list of what my skills are",
+            }
+            Object.entries(cmds).map((each) => {
+                this.echo(`\t[[b;;]${each[0]}]:\t[[i;;]${each[1]}]`);
+            })
         }
     }, {
-        greetings: 'My First Web Terminal'
+        greetings: 'Hello! 👋\nMy name is [[g;green;]Ali Azizjahan] and I’m a [[b;;]Software Developer]. I’m also known as [[g;green;]Kyxey]. Now I know this is not a fancy place to meet each other, but this is where I found love! Yes! Digging down my first personal computer as a child, when I reached the command line, I felt the infinite love of instructing a computer. And that’s where I decided to learn how to write programs.\nNow please feel free to explore around and feel a little bit of the enjoyment that I felt when I was a little kid, while trying to know me better.\nYou can start by typing “[[i;;]help]” command to get a list of the available commands, alongside with their descriptions.'
     });
     </script>
 </body>
