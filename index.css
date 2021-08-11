@@ -7,7 +7,6 @@ a::visited {
 }
 
 .content-tab {
-    position: relative;
-    left: 40px;
     margin-top: 15px;
+    margin-left: 5em;
 }
