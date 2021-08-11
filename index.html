@@ -4,26 +4,51 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
+    <link rel="stylesheet" href="./index.css" />
 </head>
 
 <body>
     <script>
+    const cmds = {
+        bio: "Get a brief biography about me",
+        clear: "Clear the terminal",
+        contact: "Get the ways to contact me directly",
+        edu: "Get my educational background",
+        exp: "Get my work experiences",
+        help: "Get a list of the available commands",
+        skills: "Get a list of what my skills are",
+    }
+    const makeLinkWithIcon = (link, text, icon) => {
+        return $(`<div class="content-tab"><img src="./assets/icons/${icon}" width="16px" /><a target="_blank" href="${link}">${text}</a></div>`)
+    }
     $('body').terminal({
         help: function() {
-            const cmds = {
-                bio: "Get a brief biography about me",
-                edu: "Get my educational background",
-                exp: "Get my work experiences",
-                help: "Get a list of the available commands",
-                skills: "Get a list of what my skills are",
-            }
             Object.entries(cmds).map((each) => {
                 this.echo(`\t[[b;;]${each[0]}]:\t[[i;;]${each[1]}]`);
             })
+        },
+        contact: function() {
+            const email = makeLinkWithIcon("mailto:maniazizjahan@gmail.com", "maniazizjahan@gmail.com", "email.png")
+            const tel = makeLinkWithIcon("tel:+989120550508", "+989120550508", "tel.png")
+            const linkedin = makeLinkWithIcon("https://linkedin.com/in/aliazizjahan", "https://linkedin.com/in/aliazizjahan", "linkedin.png");
+            const github = makeLinkWithIcon("https://github.com/kyxey", "https://github.com/kyxey", "github.png");
+            const gitlab = makeLinkWithIcon("https://gitlab.com/kyxey", "https://gitlab.com/kyxey", "gitlab.png");
+            const telegram = makeLinkWithIcon("https://t.me/AliAzizjahan", "https://t.me/AliAzizjahan", "telegram.png");
+
+            this.echo("\t[[b;black;green]Contact:]");
+            this.echo(email);
+            this.echo(tel);
+            this.echo(linkedin);
+            this.echo(github);
+            this.echo(gitlab);
+            this.echo(telegram);
         }
     }, {
-        greetings: 'Hello! 👋\nMy name is [[g;green;]Ali Azizjahan] and I’m a [[b;;]Software Developer]. I’m also known as [[g;green;]Kyxey]. Now I know this is not a fancy place to meet each other, but this is where I found love! Yes! Digging down my first personal computer as a child, when I reached the command line, I felt the infinite love of instructing a computer. And that’s where I decided to learn how to write programs.\nNow please feel free to explore around and feel a little bit of the enjoyment that I felt when I was a little kid, while trying to know me better.\nYou can start by typing “[[i;;]help]” command to get a list of the available commands, alongside with their descriptions.'
+        greetings: 'Hello! 👋\nMy name is [[g;green;]Ali Azizjahan] and I’m a [[b;;]Software Developer]. I’m also known as [[g;green;]Kyxey]. Now I know this is not a fancy place to meet each other, but this is where I found love! Yes! Digging down my first personal computer as a child, when I reached the command line, I felt the infinite love of instructing a computer. And that’s where I decided to learn how to write programs.\nNow please feel free to explore around and feel a little bit of the enjoyment that I felt when I was a little kid, while trying to know me better.\nYou can start by typing “[[i;;]help]” command to get a list of the available commands, alongside with their descriptions.',
+        autocompleteMenu: true,
+        completion: Object.keys(cmds)
     });
     </script>
 </body>

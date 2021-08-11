@@ -1,0 +1,13 @@
+a {
+    color: green;
+}
+
+a::visited {
+    color: green;
+}
+
+.content-tab {
+    position: relative;
+    left: 40px;
+    margin-top: 15px;
+}
