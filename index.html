@@ -2,16 +2,19 @@
 <html>
 
 <head>
+    <!-- These libraries and stylesheet are required for the JQuery Terminal to work -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
+    <!-- User-defined styles -->
     <link rel="stylesheet" href="./index.css" />
     <title>Ali Azizjahan (Kyxey)</title>
 </head>
 
 <body>
     <script>
+    // The available commands with their description
     const cmds = {
         bio: "Get a brief biography about me",
         clear: "Clear the terminal",
@@ -21,11 +24,20 @@
         help: "Get a list of the available commands",
         skills: "Get a list of what my skills are",
     }
+
+    /**
+     * It makes a container with an image as icon and a text link under it. Useful for the Contact command.
+     * @param {string} link - The URL that should open when clicked on the text
+     * @param {string} text - The text to be displayed under the icon
+     * @param {string} icon - The name of the icon with its extension to be read from the `assets/icons` directory
+     */
     const makeLinkWithIcon = (link, text, icon) => {
         return $(`<div class="content-tab"><img src="./assets/icons/${icon}" width="16px" /><a target="_blank" href="${link}">${text}</a></div>`)
     }
+    // Initializing the JQuery Terminal
     $('body').terminal({
         help: function() {
+            // Printing a list of the available commands with their description
             Object.entries(cmds).map((each) => {
                 this.echo(`\t[[b;;]${each[0]}]:\t[[i;;]${each[1]}]`);
             })
@@ -47,8 +59,12 @@
             this.echo(telegram);
         }
     }, {
+        // The greeting message shown on the top of the terminal
         greetings: 'Hello! 👋\nMy name is [[g;green;]Ali Azizjahan] and I’m a [[b;;]Software Developer]. I’m also known as [[g;green;]Kyxey]. Now I know this is not a fancy place to meet each other, but this is where I found love! Yes! Digging down my first personal computer as a child, when I reached the command line, I felt the infinite love of instructing a computer. And that’s where I decided to learn how to write programs.\nNow please feel free to explore around and feel a little bit of the enjoyment that I felt when I was a little kid, while trying to know me better.\nYou can start by typing “[[i;;]help]” command to get a list of the available commands, alongside with their descriptions.',
+        // Enabling auto completion. Requires `https://unpkg.com/jquery.terminal/js/autocomplete_menu.js` imported at
+        // the head of the document
         autocompleteMenu: true,
+        // The list of commands that the auto completion should work with
         completion: Object.keys(cmds)
     });
     </script>
