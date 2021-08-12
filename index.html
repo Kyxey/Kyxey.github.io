@@ -57,6 +57,33 @@
             this.echo(github);
             this.echo(gitlab);
             this.echo(telegram);
+        },
+        edu: function() {
+            // The list of educations
+            const edus = [{
+                location: "Tehran, Iran",
+                institute: "Shamsipour Technical and Vocational College",
+                field: "Computer Software Engineering",
+                degree: "B.Tech",
+                gpu: 16.05,
+                yearStarted: 2018,
+                yearEnded: 2020
+            }, {
+                location: "Tehran, Iran",
+                institute: "Shamsipour Technical and Vocational College",
+                field: "Information Technology (IT)",
+                degree: "A.E.T",
+                gpu: 17.18,
+                yearStarted: 2015,
+                yearEnded: 2018
+            }];
+
+            this.echo("\t[[b;black;green]Education:]");
+            // Format and print each education
+            edus.map(each => {
+                this.echo(`\n\t\t[[bu;;]> ${each.institute}]\t\t\t[[i;;]${each.location}]`);
+                this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "present"})]`);
+            })
         }
     }, {
         // The greeting message shown on the top of the terminal
