@@ -84,6 +84,66 @@
                 this.echo(`\n\t\t[[bu;;]> ${each.institute}]\t\t\t[[i;;]${each.location}]`);
                 this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "present"})]`);
             })
+        },
+        skills: function() {
+            // The lsit of the skills
+            const skills = [
+                { name: "Javascript", level: 5 },
+                { name: "Typescript", level: 5 },
+                { name: "NodeJS", level: 5 },
+                { name: "NestJS", level: 5 },
+                { name: "Express.JS", level: 5 },
+                { name: "Apollo", level: 5 },
+                { name: "GraphQL", level: 5 },
+                { name: "REST API", level: 5 },
+                { name: "MongoDB", level: 5 },
+                { name: "React", level: 5 },
+                { name: "NextJS", level: 5 },
+                { name: "TailwindCSS", level: 5 },
+                { name: "Sass", level: 5 },
+                { name: "HTML", level: 5 },
+                { name: "CSS", level: 5 },
+                { name: "Git", level: 5 },
+                { name: "Cypress", level: 5 },
+                { name: "Jest", level: 5 },
+                { name: "React Testing Library", level: 5 },
+                { name: "Postman", level: 5 },
+                { name: "Newman", level: 4 },
+                { name: "React Native", level: 4 },
+                { name: "PostgreSQL", level: 4 },
+                { name: "MySQL", level: 4 },
+                { name: "Puppeteer", level: 4 },
+                { name: "PHP", level: 4 },
+                { name: "Laravel", level: 4 },
+                { name: "Lumen", level: 4 },
+                { name: "Webpack", level: 4 },
+                { name: "Babel", level: 4 },
+                { name: "JQuery", level: 4 },
+                { name: "C++", level: 3 },
+                { name: "Python", level: 3 },
+                { name: "Wordpress", level: 3 },
+                { name: "Docker", level: 3 },
+            ];
+
+            /**
+             * This function takes the level number and makes a text that visually
+             * represents the level.
+             * @param {number} level - the number of level between 0 and 5
+             */
+            const makeLevelText = (level) => {
+                let myText = "";
+                for (let i = 0; i < 5; i++) {
+                    myText = myText + (i < level ? "★" : "☆");
+                }
+                return myText;
+            }
+
+            this.echo("\n[[bu;;]Note:] The stars beside each skill represents my level of proficiency in that skill compared to my other skills. Now with that said, a 5 stars doesn't mean that I know every aspects in that field. Of course that is impossible. It only means that I'm more professional in that field than my other skills.")
+            this.echo("\t[[b;black;green]Skills:]");
+            // Format and print skills
+            skills.map(each => {
+                this.echo(`\t\t[[b;green;]${makeLevelText(each.level)}] [[b;;]> ${each.name}]`)
+            })
         }
     }, {
         // The greeting message shown on the top of the terminal
