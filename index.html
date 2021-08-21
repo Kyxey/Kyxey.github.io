@@ -100,7 +100,7 @@
             this.echo("\t[[b;black;green]Education:]");
             // Format and print each education
             edus.map(each => {
-                this.echo(`\n\t\t[[bu;;]> ${each.institute}]\t\t\t[[i;;]${each.location}]`);
+                this.echo(`\n\t\t[[bu;;]> ${each.institute}]${makeSpace(each.institute.length, 53)}[[i;;]${each.location}]`);
                 this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})]`);
             })
         },
