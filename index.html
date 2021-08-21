@@ -25,7 +25,22 @@
         edu: "Get my educational background",
         exp: "Get my work experiences",
         help: "Get a list of the available commands",
+        projects: "Get a brief list of some of the projects that are done by me",
         skills: "Get a list of what my skills are",
+    }
+
+    /**
+     * It generates the spaces between each column for multi column lines
+     * to make sure the columns stay aligned.
+     * @param {number} wordLength - The length of the left column (the column that starts the spacing)
+     * @param {number} wordCountToSpace - The space that is needed for the right column in case the left column has 0 length
+     */
+    const makeSpace = (wordLength, wordCountToSpace) => {
+        let space = "";
+        for (let i = wordCountToSpace; i > wordLength; i--) {
+            space += " ";
+        }
+        return space;
     }
 
     // Initializing the JQuery Terminal
@@ -86,7 +101,48 @@
             // Format and print each education
             edus.map(each => {
                 this.echo(`\n\t\t[[bu;;]> ${each.institute}]\t\t\t[[i;;]${each.location}]`);
-                this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "present"})]`);
+                this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})]`);
+            })
+        },
+        exp: function() {
+            const exps = [{
+                    company: "Pragmidead Ltd.",
+                    location: "Remote - London, England",
+                    title: "Software Developer",
+                    dateStarted: "Jul 2020",
+                    jobs: [
+                        "Developed, maintained and created a number of various financial web applications from scratch",
+                        "Worked with one of the most famous and demanding FinTech companies to develop multiple high-quality Forex and cryptocurrency trading platforms",
+                        "Provided the technical development consulting service",
+                        "Arranged to setup and write various tests such as unit tests, integration tests and end-to-end tests for a couple of financial web applications",
+                        "Worked with the most cutting-edge web technologies to setup, develop and deploy a number of web applications"
+                    ]
+                },
+                {
+                    company: "Freelance",
+                    location: "Remote",
+                    title: "Software Developer",
+                    dateStarted: "Jan 2015",
+                    dateEnded: "Jul 2020",
+                    jobs: [
+                        "Experienced working with many social media platforms’ API such as Telegram, Instagram, Facebook and Twitter",
+                        "Made some Telegram bots for my customers",
+                        "Created multiple different websites and web apps such as simple static portfolios and E-commerce platforms",
+                        "Engaged in the open-source developing community by both committing to the currently existing open-source projects and making some new ones",
+                        "Worked in a couple of small startup teams and done several side projects and tasks for them"
+                    ]
+                }
+            ]
+
+            this.echo("\t[[b;black;green]Experience:]");
+            // Format and print each experience
+            exps.map(each => {
+                this.echo(`\n\t\t[[bu;;]> ${each.company}]${makeSpace(each.company.length, 26)}[[i;;]${each.location}]`);
+                this.echo(`\t\t[[i;;]${each.title}]${makeSpace(each.title.length, 28)}(${each.dateStarted}-${each.dateEnded || "Present"})`);
+                each.jobs.map(eachJob => {
+                    this.echo($(`<div class="content-tab">• ${eachJob}</div>`));
+                })
+                this.echo('\n')
             })
         },
         skills: function() {
