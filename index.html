@@ -23,6 +23,7 @@
         clear: "Clear the terminal",
         contact: "Get the ways to contact me directly",
         edu: "Get my educational background",
+        exit: "Close the terminal",
         exp: "Get my work experiences",
         help: "Get a list of the available commands",
         skills: "Get a list of what my skills are",
@@ -88,6 +89,18 @@
                 this.echo(`\n\t\t[[bu;;]> ${each.institute}]\t\t\t[[i;;]${each.location}]`);
                 this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "present"})]`);
             })
+        },
+        exit: function() {
+            this.echo("Goodbye! 👋");
+
+            // Close the window after 1 second so the user can read the goodbye message.
+            const timer = setTimeout(() => {
+                // Clear the timer
+                clearTimeout(timer);
+
+                // Close the window
+                window.close();
+            }, 1000);
         },
         skills: function() {
             // The lsit of the skills
