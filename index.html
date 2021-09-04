@@ -19,7 +19,6 @@
     <script>
     // The available commands with their description
     const cmds = {
-        bio: "Get a brief biography about me",
         clear: "Clear the terminal",
         contact: "Get the ways to contact me directly",
         edu: "Get my educational background",
@@ -38,7 +37,7 @@
     const makeSpace = (wordLength, wordCountToSpace) => {
         let space = "";
         for (let i = wordCountToSpace; i > wordLength; i--) {
-            space += " ";
+            space += "&nbsp;";
         }
         return space;
     }
@@ -101,8 +100,8 @@
             this.echo("\t[[b;black;green]Education:]");
             // Format and print each education
             edus.map(each => {
-                this.echo(`\t[[;green;]│]\n\t[[;green;]│]\t[[bu;;]> ${each.institute}]${makeSpace(each.institute.length, 57)}[[i;;]${each.location}]`);
-                this.echo(`\t[[;green;]│]\t [[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})]`);
+                this.echo($(`<div class="content-tab"><br /><div class="title"><b><u>> ${each.institute}</u></b>${makeSpace(each.institute.length, 57)}<div><i>${each.location}</i></div></div></div>`));
+                this.echo($(`<div class="content-tab">&nbsp;<i>${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})</i></div>`))
             });
 
             this.echo('\t[[;green;]└]');
@@ -140,8 +139,8 @@
             this.echo("\t[[b;black;green]Experience:]");
             // Format and print each experience
             exps.map(each => {
-                this.echo(`\t[[;green;]│]\n\t[[;green;]│]\t[[bu;;]> ${each.company}]${makeSpace(each.company.length, 26)}[[i;;]${each.location}]`);
-                this.echo(`\t[[;green;]│]\t[[i;;] ${each.title}]${makeSpace(each.title.length, 27)}(${each.dateStarted}-${each.dateEnded || "Present"})`);
+                this.echo($(`<div class="content-tab"><br /><div class="title"><b><u>> ${each.company}</u></b>${makeSpace(each.company.length, 26)}<div><i>${each.location}</i></div></div></div>`));
+                this.echo($(`<div class="content-tab"><div class="title"><i>&nbsp;${each.title}</i>${makeSpace(each.title.length, 27)}<div>(${each.dateStarted}-${each.dateEnded || "Present"})</div></div></div>`));
                 each.jobs.map(eachJob => {
                     this.echo($(`<div class="content-tab" style="padding-left: 35px;">• ${eachJob}</div>`));
                 });
@@ -192,7 +191,7 @@
             this.echo("\t[[b;black;green]Skills:]");
             // Format and print skills
             skills.map((each, index) => {
-                this.echo(`\t[[;green;]│]\t• ${each.name}`)
+                this.echo($(`<div class="content-tab">• ${each.name}</div>`))
             })
 
             this.echo('\t[[;green;]└]');
