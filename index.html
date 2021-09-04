@@ -76,6 +76,7 @@
             this.echo(github);
             this.echo(gitlab);
             this.echo(telegram);
+            this.echo('\t[[;green;]└]');
         },
         edu: function() {
             // The list of educations
@@ -100,9 +101,11 @@
             this.echo("\t[[b;black;green]Education:]");
             // Format and print each education
             edus.map(each => {
-                this.echo(`\n\t\t[[bu;;]> ${each.institute}]${makeSpace(each.institute.length, 53)}[[i;;]${each.location}]`);
-                this.echo(`\t\t[[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})]`);
-            })
+                this.echo(`\t[[;green;]│]\n\t[[;green;]│]\t[[bu;;]> ${each.institute}]${makeSpace(each.institute.length, 57)}[[i;;]${each.location}]`);
+                this.echo(`\t[[;green;]│]\t [[i;;]${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})]`);
+            });
+
+            this.echo('\t[[;green;]└]');
         },
         exp: function() {
             const exps = [{
@@ -137,13 +140,14 @@
             this.echo("\t[[b;black;green]Experience:]");
             // Format and print each experience
             exps.map(each => {
-                this.echo(`\n\t\t[[bu;;]> ${each.company}]${makeSpace(each.company.length, 26)}[[i;;]${each.location}]`);
-                this.echo(`\t\t[[i;;]${each.title}]${makeSpace(each.title.length, 28)}(${each.dateStarted}-${each.dateEnded || "Present"})`);
+                this.echo(`\t[[;green;]│]\n\t[[;green;]│]\t[[bu;;]> ${each.company}]${makeSpace(each.company.length, 26)}[[i;;]${each.location}]`);
+                this.echo(`\t[[;green;]│]\t[[i;;] ${each.title}]${makeSpace(each.title.length, 27)}(${each.dateStarted}-${each.dateEnded || "Present"})`);
                 each.jobs.map(eachJob => {
-                    this.echo($(`<div class="content-tab">• ${eachJob}</div>`));
-                })
-                this.echo('\n')
-            })
+                    this.echo($(`<div class="content-tab" style="padding-left: 35px;">• ${eachJob}</div>`));
+                });
+            });
+
+            this.echo('\t[[;green;]└]');
         },
         skills: function() {
             // The lsit of the skills
@@ -185,25 +189,13 @@
                 { name: "Docker", level: 3 },
             ];
 
-            /**
-             * This function takes the level number and makes a text that visually
-             * represents the level.
-             * @param {number} level - the number of level between 0 and 5
-             */
-            const makeLevelText = (level) => {
-                let myText = "";
-                for (let i = 0; i < 5; i++) {
-                    myText = myText + (i < level ? "[[g;;]★]" : "☆");
-                }
-                return myText;
-            }
-
-            this.echo("\n[[bu;;]Note:] The stars beside each skill represents my level of proficiency in that skill compared to my other skills. Now with that said, a 5 stars doesn't mean that I know every aspects in that field. Of course that is impossible. It only means that I'm more professional in that field than my other skills.")
             this.echo("\t[[b;black;green]Skills:]");
             // Format and print skills
-            skills.map(each => {
-                this.echo(`\t\t[[b;;][[;green;]${makeLevelText(each.level)}] > ${each.name}`)
+            skills.map((each, index) => {
+                this.echo(`\t[[;green;]│]\t• ${each.name}`)
             })
+
+            this.echo('\t[[;green;]└]');
         }
     }, {
         // The greeting message shown on the top of the terminal
