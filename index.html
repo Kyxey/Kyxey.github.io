@@ -24,6 +24,7 @@
         edu: "Get my educational background",
         exp: "Get my work experiences",
         help: "Get a list of the available commands",
+        pdf: "Get a PDF version of the information in this site (my resume)",
         projects: "Get a brief list of some of the projects that are done by me",
         skills: "Get a list of what my skills are",
     }
@@ -148,6 +149,12 @@
 
             this.echo('\t[[;green;]└]');
         },
+        pdf: function() {
+            this.echo("\t[[b;black;green]Resume:]");
+            this.echo($(`<div class="content-tab">Your download should start automatically. If it didn't, please <a id="pdf-download" target="_blank" href="Resume-Ali-Azizjahan.pdf" download>click here</a>.</div>`));
+            this.echo('\t[[;green;]└]');
+            document.getElementById("pdf-download").click();
+        },
         projects: function() {
             const prjs = [{
                     title: "Chopen",
@@ -247,7 +254,7 @@
             ]
 
             this.echo("\t[[b;black;green]Projects:]");
-            // Format and print each experience
+            // Format and print each project
             prjs.map(each => {
                 this.echo($(`<div class="content-tab"><br /><b><u>> ${each.title}</u></b></div>`));
                 each.urls.map(eachURL => {
