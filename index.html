@@ -46,9 +46,10 @@
     // Initializing the JQuery Terminal
     $('body').terminal({
         help: function() {
+            this.echo("\t[[b;black;green]Commands:]");
             // Printing a list of the available commands with their description
             Object.entries(cmds).map((each) => {
-                this.echo(`\t[[b;;]${each[0]}]:\t[[i;;]${each[1]}]`);
+                this.echo($(`<div class="content-tab"><div class="title"><b>${each[0]}:</b>${makeSpace(each[0].length, 10)}<div><i>${each[1]}</i></div></div></div>`));
             })
         },
         contact: function() {
