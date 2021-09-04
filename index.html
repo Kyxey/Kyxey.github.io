@@ -76,7 +76,6 @@
             this.echo(github);
             this.echo(gitlab);
             this.echo(telegram);
-            this.echo('\t[[;green;]└]');
         },
         edu: function() {
             // The list of educations
@@ -104,8 +103,6 @@
                 this.echo($(`<div class="content-tab"><br /><div class="title"><b><u>> ${each.institute}</u></b>${makeSpace(each.institute.length, 57)}<div><i>${each.location}</i></div></div></div>`));
                 this.echo($(`<div class="content-tab">&nbsp;<i>${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})</i></div>`))
             });
-
-            this.echo('\t[[;green;]└]');
         },
         exp: function() {
             const exps = [{
@@ -146,13 +143,10 @@
                     this.echo($(`<div class="content-tab" style="padding-left: 40px;">• ${eachJob}</div>`));
                 });
             });
-
-            this.echo('\t[[;green;]└]');
         },
         pdf: function() {
             this.echo("\t[[b;black;green]Resume:]");
             this.echo($(`<div class="content-tab">Your download should start automatically. If it didn't, please <a id="pdf-download" target="_blank" href="Resume-Ali-Azizjahan.pdf" download>click here</a>.</div>`));
-            this.echo('\t[[;green;]└]');
             document.getElementById("pdf-download").click();
         },
         projects: function() {
@@ -264,8 +258,6 @@
                     this.echo($(`<div class="content-tab" style="padding-left: 40px;">• ${eachJob}</div>`));
                 });
             });
-
-            this.echo('\t[[;green;]└]');
         },
         skills: function() {
             // The lsit of the skills
@@ -312,8 +304,6 @@
             skills.map((each, index) => {
                 this.echo($(`<div class="content-tab">• ${each.name}</div>`))
             })
-
-            this.echo('\t[[;green;]└]');
         }
     }, {
         // The greeting message shown on the top of the terminal
