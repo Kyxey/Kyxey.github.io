@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#000000">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#000000" />
     <!-- Social media meta tags -->
-    <meta property="og:site_name" content="Ali Azizjahan (Kyxey)">
-    <meta property="og:title" content="Ali Azizjahan (Kyxey) Portfolio">
-    <meta property="twitter:title" content="Ali Azizjahan (Kyxey) Portfolio">
-    <meta property="og:description" content="Get to know Ali Azizjahan (Kyxey) better or download his resume.">
-    <meta property="twitter:description" content="Get to know Ali Azizjahan (Kyxey) better or download his resume.">
-    <meta property="og:image" content="https://kyxey.github.io/favicon.png">
-    <meta property="twitter:image" content="https://kyxey.github.io/favicon.png">
-    <meta property="og:url" content="https://kyxey.github.io">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:image:alt" content="Kyxey logo">
+    <meta property="og:site_name" content="Ali Azizjahan (Kyxey)" />
+    <meta property="og:title" content="Ali Azizjahan (Kyxey) Portfolio" />
+    <meta property="twitter:title" content="Ali Azizjahan (Kyxey) Portfolio" />
+    <meta
+      property="og:description"
+      content="Get to know Ali Azizjahan (Kyxey) better or download his resume."
+    />
+    <meta
+      property="twitter:description"
+      content="Get to know Ali Azizjahan (Kyxey) better or download his resume."
+    />
+    <meta property="og:image" content="https://kyxey.github.io/favicon.png" />
+    <meta
+      property="twitter:image"
+      content="https://kyxey.github.io/favicon.png"
+    />
+    <meta property="og:url" content="https://kyxey.github.io" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image:alt" content="Kyxey logo" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <!-- These libraries and stylesheet are required for the JQuery Terminal to work -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"
+    />
     <!-- User-defined styles -->
     <link rel="stylesheet" href="./index.css" />
     <title>Ali Azizjahan (Kyxey)</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-    // The available commands with their description
-    const cmds = {
+      // The available commands with their description
+      const cmds = {
         clear: "Clear the terminal",
         contact: "Get the ways to contact me directly",
         edu: "Get my educational background",
         exp: "Get my work experiences",
         help: "Get a list of the available commands",
         pdf: "Get a PDF version of the information in this site (my resume)",
-        projects: "Get a brief list of some of the projects that are done by me",
+        projects:
+          "Get a brief list of some of the projects that are done by me",
         skills: "Get a list of what my skills are",
-    }
+      };
 
-    /**
-     * It generates the spaces between each column for multi column lines
-     * to make sure the columns stay aligned.
-     * @param {number} wordLength - The length of the left column (the column that starts the spacing)
-     * @param {number} wordCountToSpace - The space that is needed for the right column in case the left column has 0 length
-     */
-    const makeSpace = (wordLength, wordCountToSpace) => {
+      /**
+       * It generates the spaces between each column for multi column lines
+       * to make sure the columns stay aligned.
+       * @param {number} wordLength - The length of the left column (the column that starts the spacing)
+       * @param {number} wordCountToSpace - The space that is needed for the right column in case the left column has 0 length
+       */
+      const makeSpace = (wordLength, wordCountToSpace) => {
         let space = "";
         for (let i = wordCountToSpace; i > wordLength; i--) {
-            space += "&nbsp;";
+          space += "&nbsp;";
         }
         return space;
-    }
+      };
 
-    // Initializing the JQuery Terminal
-    $('body').terminal({
-        help: function() {
+      // Initializing the JQuery Terminal
+      $("body").terminal(
+        {
+          help: function () {
             this.echo("\t[[b;black;green]Commands:]");
             // Printing a list of the available commands with their description
             Object.entries(cmds).map((each) => {
-                this.echo($(`<div class="content-tab"><div class="title"><b>${each[0]}:</b>${makeSpace(each[0].length, 10)}<div><i>${each[1]}</i></div></div></div>`));
-            })
-        },
-        contact: function() {
+              this.echo(
+                $(
+                  `<div class="content-tab"><div class="title"><b>${
+                    each[0]
+                  }:</b>${makeSpace(each[0].length, 10)}<div><i>${
+                    each[1]
+                  }</i></div></div></div>`
+                )
+              );
+            });
+          },
+          contact: function () {
             /**
              * It makes a container with an image as icon and a text link under it. Useful for the Contact command.
              * @param {string} link - The URL that should open when clicked on the text
@@ -71,15 +95,41 @@
              * @param {string} icon - The name of the icon with its extension to be read from the `assets/icons` directory
              */
             const makeLinkWithIcon = (link, text, icon) => {
-                return $(`<div class="content-tab"><img src="./assets/icons/${icon}" width="16px" /><a target="_blank" href="${link}">${text}</a></div>`)
-            }
+              return $(
+                `<div class="content-tab"><img src="./assets/icons/${icon}" width="16px" /><a target="_blank" href="${link}">${text}</a></div>`
+              );
+            };
 
-            const email = makeLinkWithIcon("mailto:maniazizjahan@gmail.com", "maniazizjahan@gmail.com", "email.png")
-            const tel = makeLinkWithIcon("tel:+989120550508", "+989120550508", "tel.png")
-            const linkedin = makeLinkWithIcon("https://linkedin.com/in/aliazizjahan", "https://linkedin.com/in/aliazizjahan", "linkedin.png");
-            const github = makeLinkWithIcon("https://github.com/kyxey", "https://github.com/kyxey", "github.png");
-            const gitlab = makeLinkWithIcon("https://gitlab.com/kyxey", "https://gitlab.com/kyxey", "gitlab.png");
-            const telegram = makeLinkWithIcon("https://t.me/AliAzizjahan", "https://t.me/AliAzizjahan", "telegram.png");
+            const email = makeLinkWithIcon(
+              "mailto:maniazizjahan@gmail.com",
+              "maniazizjahan@gmail.com",
+              "email.png"
+            );
+            const tel = makeLinkWithIcon(
+              "tel:+989120550508",
+              "+989120550508",
+              "tel.png"
+            );
+            const linkedin = makeLinkWithIcon(
+              "https://linkedin.com/in/aliazizjahan",
+              "https://linkedin.com/in/aliazizjahan",
+              "linkedin.png"
+            );
+            const github = makeLinkWithIcon(
+              "https://github.com/kyxey",
+              "https://github.com/kyxey",
+              "github.png"
+            );
+            const gitlab = makeLinkWithIcon(
+              "https://gitlab.com/kyxey",
+              "https://gitlab.com/kyxey",
+              "gitlab.png"
+            );
+            const telegram = makeLinkWithIcon(
+              "https://t.me/AliAzizjahan",
+              "https://t.me/AliAzizjahan",
+              "telegram.png"
+            );
 
             this.echo("\t[[b;black;green]Contact:]");
             this.echo(email);
@@ -88,245 +138,308 @@
             this.echo(github);
             this.echo(gitlab);
             this.echo(telegram);
-        },
-        edu: function() {
+          },
+          edu: function () {
             // The list of educations
-            const edus = [{
+            const edus = [
+              {
+                location: "Tehran, Iran",
+                institute: "Islamic Azad University E-Campus",
+                field: "Computer Software",
+                degree: "MTech",
+                yearStarted: 2021,
+              },
+              {
                 location: "Tehran, Iran",
                 institute: "Shamsipour Technical and Vocational College",
                 field: "Computer Software Engineering",
                 degree: "B.Tech",
                 gpu: 16.05,
                 yearStarted: 2018,
-                yearEnded: 2020
-            }, {
+                yearEnded: 2020,
+              },
+              {
                 location: "Tehran, Iran",
                 institute: "Shamsipour Technical and Vocational College",
                 field: "Information Technology (IT)",
                 degree: "A.E.T",
                 gpu: 17.18,
                 yearStarted: 2015,
-                yearEnded: 2018
-            }];
+                yearEnded: 2018,
+              },
+            ];
 
             this.echo("\t[[b;black;green]Education:]");
             // Format and print each education
-            edus.map(each => {
-                this.echo($(`<div class="content-tab"><br /><div class="title"><b><u>> ${each.institute}</u></b>${makeSpace(each.institute.length, 57)}<div><i>${each.location}</i></div></div></div>`));
-                this.echo($(`<div class="content-tab">&nbsp;<i>${each.degree} in ${each.field} - GPU: ${each.gpu}/20.00 (${each.yearStarted}-${each.yearEnded || "Present"})</i></div>`))
+            edus.map((each) => {
+              this.echo(
+                $(
+                  `<div class="content-tab"><br /><div class="title"><b><u>> ${
+                    each.institute
+                  }</u></b>${makeSpace(each.institute.length, 57)}<div><i>${
+                    each.location
+                  }</i></div></div></div>`
+                )
+              );
+              this.echo(
+                $(
+                  `<div class="content-tab">&nbsp;<i>${each.degree} in ${
+                    each.field
+                  }${each.gpu ? ` - GPU: ${each.gpu}/20.00` : ""} (${
+                    each.yearStarted
+                  }-${each.yearEnded || "Present"})</i></div>`
+                )
+              );
             });
-        },
-        exp: function() {
-            const exps = [{
-                    company: "Pragmidead Ltd.",
-                    location: "Remote - London, England",
-                    title: "Software Developer",
-                    dateStarted: "Jul 2020",
-                    jobs: [
-                        "Developed, maintained and created a number of various financial web applications from scratch",
-                        "Worked with one of the most famous and demanding FinTech companies to develop multiple high-quality Forex and cryptocurrency trading platforms",
-                        "Provided the technical development consulting service",
-                        "Arranged to setup and write various tests such as unit tests, integration tests and end-to-end tests for a couple of financial web applications",
-                        "Worked with the most cutting-edge web technologies to setup, develop and deploy a number of web applications"
-                    ]
-                },
-                {
-                    company: "Freelance",
-                    location: "Remote",
-                    title: "Software Developer",
-                    dateStarted: "Jan 2015",
-                    dateEnded: "Jul 2020",
-                    jobs: [
-                        "Experienced working with many social media platforms’ API such as Telegram, Instagram, Facebook and Twitter",
-                        "Made some Telegram bots for my customers",
-                        "Created multiple different websites and web apps such as simple static portfolios and E-commerce platforms",
-                        "Engaged in the open-source developing community by both committing to the currently existing open-source projects and making some new ones",
-                        "Worked in a couple of small startup teams and done several side projects and tasks for them"
-                    ]
-                }
-            ]
+          },
+          exp: function () {
+            const exps = [
+              {
+                company: "Pragmidead Ltd.",
+                location: "Remote - London, England",
+                title: "Software Developer",
+                dateStarted: "Jul 2020",
+                dateEnded: "Oct 2021",
+                jobs: [
+                  "Developed, maintained and created a number of various financial web applications from scratch",
+                  "Worked with one of the most famous and demanding FinTech companies to develop multiple high-quality Forex and cryptocurrency trading platforms",
+                  "Provided the technical development consulting service",
+                  "Arranged to setup and write various tests such as unit tests, integration tests and end-to-end tests for a couple of financial web applications",
+                  "Worked with the most cutting-edge web technologies to setup, develop and deploy a number of web applications",
+                ],
+              },
+              {
+                company: "Freelance",
+                location: "Remote",
+                title: "Software Developer",
+                dateStarted: "Jan 2015",
+                dateEnded: "Jul 2020",
+                jobs: [
+                  "Experienced working with many social media platforms’ API such as Telegram, Instagram, Facebook and Twitter",
+                  "Made some Telegram bots for my customers",
+                  "Created multiple different websites and web apps such as simple static portfolios and E-commerce platforms",
+                  "Engaged in the open-source developing community by both committing to the currently existing open-source projects and making some new ones",
+                  "Worked in a couple of small startup teams and done several side projects and tasks for them",
+                ],
+              },
+            ];
 
             this.echo("\t[[b;black;green]Experience:]");
             // Format and print each experience
-            exps.map(each => {
-                this.echo($(`<div class="content-tab"><br /><div class="title"><b><u>> ${each.company}</u></b>${makeSpace(each.company.length, 26)}<div><i>${each.location}</i></div></div></div>`));
-                this.echo($(`<div class="content-tab"><div class="title"><i>&nbsp;${each.title}</i>${makeSpace(each.title.length, 27)}<div>(${each.dateStarted}-${each.dateEnded || "Present"})</div></div></div>`));
-                each.jobs.map(eachJob => {
-                    this.echo($(`<div class="content-tab" style="padding-left: 40px;">• ${eachJob}</div>`));
-                });
+            exps.map((each) => {
+              this.echo(
+                $(
+                  `<div class="content-tab"><br /><div class="title"><b><u>> ${
+                    each.company
+                  }</u></b>${makeSpace(each.company.length, 26)}<div><i>${
+                    each.location
+                  }</i></div></div></div>`
+                )
+              );
+              this.echo(
+                $(
+                  `<div class="content-tab"><div class="title"><i>&nbsp;${
+                    each.title
+                  }</i>${makeSpace(each.title.length, 27)}<div>(${
+                    each.dateStarted
+                  }-${each.dateEnded || "Present"})</div></div></div>`
+                )
+              );
+              each.jobs.map((eachJob) => {
+                this.echo(
+                  $(
+                    `<div class="content-tab" style="padding-left: 40px;">• ${eachJob}</div>`
+                  )
+                );
+              });
             });
-        },
-        pdf: function() {
+          },
+          pdf: function () {
             this.echo("\t[[b;black;green]Resume:]");
-            this.echo($(`<div class="content-tab">Your download should start automatically. If it didn't, please <a id="pdf-download" target="_blank" href="Resume-Ali-Azizjahan.pdf" download>click here</a>.</div>`));
+            this.echo(
+              $(
+                `<div class="content-tab">Your download should start automatically. If it didn't, please <a id="pdf-download" target="_blank" href="Resume-Ali-Azizjahan.pdf" download>click here</a>.</div>`
+              )
+            );
             document.getElementById("pdf-download").click();
-        },
-        projects: function() {
-            const prjs = [{
-                    title: "Chopen",
-                    urls: ["https://github.com/Kyxey/chopen"],
-                    jobs: [
-                        "Utilized D3.js library for data visualization",
-                        "Contributed to a widely used open-source project"
-                    ]
-                },
-                {
-                    title: "DeltaInstaBot",
-                    urls: ["https://gitlab.com/kyxey/deltainstabot"],
-                    jobs: [
-                        "Worked with Telegram's API to implement an enterprise bot from scratch",
-                        "Managed to deploy a fully functional Telegram bot from 0 to 100 on a VPS server",
-                        "Designed and implemented a complete MongoDB database"
-                    ]
-                },
-                {
-                    title: "Dextractor",
-                    urls: [
-                        "https://gitlab.com/kyxey/dextractor",
-                        "https://gitlab.com/monaxon/dextractor"
-                    ],
-                    jobs: [
-                        "Managed to publish an open-source NPM NodeJS package from scratch",
-                        "Created a CLI tool that utilizes the package",
-                        "Worked with the core concepts of web scrapping"
-                    ]
-                },
-                {
-                    title: "Manili",
-                    urls: [],
-                    jobs: [
-                        "Started an e-commerce store with Wordpress/WooCommerce from scratch",
-                        "Managed to implement most of the concepts in an e-commerce website like customer/admin panels, discount codes, affiliate marketing etc."
-                    ]
-                },
-                {
-                    title: "Monaxon",
-                    urls: ["https://gitlab.com/kyxey/MonaxonWebsite"],
-                    jobs: ["Worked with ReactJS for frontend and Lumen/Laravel for backend to make a simple portfolio website from scratch"]
-                },
-                {
-                    title: "NajmX Wallet",
-                    urls: [],
-                    jobs: [
-                        "Worked in a discontinued FinTech startup as a frontend/mobile developer",
-                        "Used React Native for developing a cryptocurrency mobile wallet for both Android and iOS"
-                    ]
-                },
-                {
-                    title: "Ostadlive",
-                    urls: [
-                        "https://gitlab.com/kyxey/ostadlive",
-                        "https://gitlab.com/kyxey/wp-ostadlive"
-                    ],
-                    jobs: [
-                        "Worked in fullstack for a discontinued startup project from 0 to 100",
-                        "Used ReactJS for frontend, Laravel/Lumen for backend and MySQL for database",
-                        "Utilized Redux inside the frontend app and the Mapbox package for providing a complete map"
-                    ]
-                },
-                {
-                    title: "PriceCast",
-                    urls: [
-                        "https://github.com/Kyxey/price-cast"
-                    ],
-                    jobs: [
-                        "Made use of the Telegram's API to develop a complete bot from scratch",
-                        "Used MongoDB for database and NodeJS/Typescript for the main code",
-                        "Deployed the app on a linux VPS server as a background service",
-                        "Worked with Nomics API to implement a cryptocurrencies price casting bot and channel"
-                    ]
-                },
-                {
-                    title: "Sixmim",
-                    urls: [
-                        "https://gitlab.com/kyxey/sixmim"
-                    ],
-                    jobs: [
-                        "Utilized Facebook's, Instagram's and Telegram's APIs in a complete web scrapping project",
-                        "Managed to make use of the Puppeteer library for web scrapping",
-                        "Implemented the database in MongoDB and deployed the app on a linux VPS server"
-                    ]
-                },
-                {
-                    title: "Streamer",
-                    urls: [
-                        "https://gitlab.com/kyxey/streamer"
-                    ],
-                    jobs: [
-                        "Done a personal file streamer project from scratch",
-                        "Managed to work with most of the concepts of file streaming on NodeJS"
-                    ]
-                }
-            ]
+          },
+          projects: function () {
+            const prjs = [
+              {
+                title: "Chopen",
+                urls: ["https://github.com/Kyxey/chopen"],
+                jobs: [
+                  "Utilized D3.js library for data visualization",
+                  "Contributed to a widely used open-source project",
+                ],
+              },
+              {
+                title: "DeltaInstaBot",
+                urls: ["https://gitlab.com/kyxey/deltainstabot"],
+                jobs: [
+                  "Worked with Telegram's API to implement an enterprise bot from scratch",
+                  "Managed to deploy a fully functional Telegram bot from 0 to 100 on a VPS server",
+                  "Designed and implemented a complete MongoDB database",
+                ],
+              },
+              {
+                title: "Dextractor",
+                urls: [
+                  "https://gitlab.com/kyxey/dextractor",
+                  "https://gitlab.com/monaxon/dextractor",
+                ],
+                jobs: [
+                  "Managed to publish an open-source NPM NodeJS package from scratch",
+                  "Created a CLI tool that utilizes the package",
+                  "Worked with the core concepts of web scrapping",
+                ],
+              },
+              {
+                title: "Manili",
+                urls: [],
+                jobs: [
+                  "Started an e-commerce store with Wordpress/WooCommerce from scratch",
+                  "Managed to implement most of the concepts in an e-commerce website like customer/admin panels, discount codes, affiliate marketing etc.",
+                ],
+              },
+              {
+                title: "Monaxon",
+                urls: ["https://gitlab.com/kyxey/MonaxonWebsite"],
+                jobs: [
+                  "Worked with ReactJS for frontend and Lumen/Laravel for backend to make a simple portfolio website from scratch",
+                ],
+              },
+              {
+                title: "NajmX Wallet",
+                urls: [],
+                jobs: [
+                  "Worked in a discontinued FinTech startup as a frontend/mobile developer",
+                  "Used React Native for developing a cryptocurrency mobile wallet for both Android and iOS",
+                ],
+              },
+              {
+                title: "Ostadlive",
+                urls: [
+                  "https://gitlab.com/kyxey/ostadlive",
+                  "https://gitlab.com/kyxey/wp-ostadlive",
+                ],
+                jobs: [
+                  "Worked in fullstack for a discontinued startup project from 0 to 100",
+                  "Used ReactJS for frontend, Laravel/Lumen for backend and MySQL for database",
+                  "Utilized Redux inside the frontend app and the Mapbox package for providing a complete map",
+                ],
+              },
+              {
+                title: "PriceCast",
+                urls: ["https://github.com/Kyxey/price-cast"],
+                jobs: [
+                  "Made use of the Telegram's API to develop a complete bot from scratch",
+                  "Used MongoDB for database and NodeJS/Typescript for the main code",
+                  "Deployed the app on a linux VPS server as a background service",
+                  "Worked with Nomics API to implement a cryptocurrencies price casting bot and channel",
+                ],
+              },
+              {
+                title: "Sixmim",
+                urls: ["https://gitlab.com/kyxey/sixmim"],
+                jobs: [
+                  "Utilized Facebook's, Instagram's and Telegram's APIs in a complete web scrapping project",
+                  "Managed to make use of the Puppeteer library for web scrapping",
+                  "Implemented the database in MongoDB and deployed the app on a linux VPS server",
+                ],
+              },
+              {
+                title: "Streamer",
+                urls: ["https://gitlab.com/kyxey/streamer"],
+                jobs: [
+                  "Done a personal file streamer project from scratch",
+                  "Managed to work with most of the concepts of file streaming on NodeJS",
+                ],
+              },
+            ];
 
             this.echo("\t[[b;black;green]Projects:]");
             // Format and print each project
-            prjs.map(each => {
-                this.echo($(`<div class="content-tab"><br /><b><u>> ${each.title}</u></b></div>`));
-                each.urls.map(eachURL => {
-                    this.echo($(`<div class="content-tab">&nbsp;<a target="_blank" href="${eachURL}">${eachURL}</a></div>`))
-                })
-                each.jobs.map(eachJob => {
-                    this.echo($(`<div class="content-tab" style="padding-left: 40px;">• ${eachJob}</div>`));
-                });
+            prjs.map((each) => {
+              this.echo(
+                $(
+                  `<div class="content-tab"><br /><b><u>> ${each.title}</u></b></div>`
+                )
+              );
+              each.urls.map((eachURL) => {
+                this.echo(
+                  $(
+                    `<div class="content-tab">&nbsp;<a target="_blank" href="${eachURL}">${eachURL}</a></div>`
+                  )
+                );
+              });
+              each.jobs.map((eachJob) => {
+                this.echo(
+                  $(
+                    `<div class="content-tab" style="padding-left: 40px;">• ${eachJob}</div>`
+                  )
+                );
+              });
             });
-        },
-        skills: function() {
+          },
+          skills: function () {
             // The lsit of the skills
             const skills = [
-                { name: "Javascript", level: 5 },
-                { name: "Typescript", level: 5 },
-                { name: "NodeJS", level: 5 },
-                { name: "NestJS", level: 5 },
-                { name: "Express.JS", level: 5 },
-                { name: "Apollo", level: 5 },
-                { name: "GraphQL", level: 5 },
-                { name: "REST API", level: 5 },
-                { name: "MongoDB", level: 5 },
-                { name: "React", level: 5 },
-                { name: "NextJS", level: 5 },
-                { name: "TailwindCSS", level: 5 },
-                { name: "Sass", level: 5 },
-                { name: "HTML", level: 5 },
-                { name: "CSS", level: 5 },
-                { name: "Git", level: 5 },
-                { name: "Cypress", level: 5 },
-                { name: "Jest", level: 5 },
-                { name: "React Testing Library", level: 5 },
-                { name: "Postman", level: 5 },
-                { name: "Newman", level: 4 },
-                { name: "React Native", level: 4 },
-                { name: "PostgreSQL", level: 4 },
-                { name: "MySQL", level: 4 },
-                { name: "Puppeteer", level: 4 },
-                { name: "PHP", level: 4 },
-                { name: "Laravel", level: 4 },
-                { name: "Lumen", level: 4 },
-                { name: "Webpack", level: 4 },
-                { name: "Babel", level: 4 },
-                { name: "JQuery", level: 4 },
-                { name: "C++", level: 3 },
-                { name: "Python", level: 3 },
-                { name: "Wordpress", level: 3 },
-                { name: "Docker", level: 3 },
+              { name: "Javascript", level: 5 },
+              { name: "Typescript", level: 5 },
+              { name: "NodeJS", level: 5 },
+              { name: "NestJS", level: 5 },
+              { name: "Express.JS", level: 5 },
+              { name: "Apollo", level: 5 },
+              { name: "GraphQL", level: 5 },
+              { name: "REST API", level: 5 },
+              { name: "MongoDB", level: 5 },
+              { name: "React", level: 5 },
+              { name: "NextJS", level: 5 },
+              { name: "TailwindCSS", level: 5 },
+              { name: "Sass", level: 5 },
+              { name: "HTML", level: 5 },
+              { name: "CSS", level: 5 },
+              { name: "Git", level: 5 },
+              { name: "Cypress", level: 5 },
+              { name: "Jest", level: 5 },
+              { name: "React Testing Library", level: 5 },
+              { name: "Postman", level: 5 },
+              { name: "Newman", level: 4 },
+              { name: "React Native", level: 4 },
+              { name: "PostgreSQL", level: 4 },
+              { name: "MySQL", level: 4 },
+              { name: "Puppeteer", level: 4 },
+              { name: "PHP", level: 4 },
+              { name: "Laravel", level: 4 },
+              { name: "Lumen", level: 4 },
+              { name: "Webpack", level: 4 },
+              { name: "Babel", level: 4 },
+              { name: "JQuery", level: 4 },
+              { name: "C++", level: 3 },
+              { name: "Python", level: 3 },
+              { name: "Wordpress", level: 3 },
+              { name: "Docker", level: 3 },
             ];
 
             this.echo("\t[[b;black;green]Skills:]");
             // Format and print skills
             skills.map((each, index) => {
-                this.echo($(`<div class="content-tab">• ${each.name}</div>`))
-            })
+              this.echo($(`<div class="content-tab">• ${each.name}</div>`));
+            });
+          },
+        },
+        {
+          // The greeting message shown on the top of the terminal
+          greetings:
+            "Hello! 👋\nMy name is [[g;green;]Ali Azizjahan] and I’m a [[b;;]Software Developer]. I’m also known as [[g;green;]Kyxey]. Now I know this is not a fancy place to meet each other, but this is where I found love! Yes! Digging down my first personal computer as a child, when I reached the command line, I felt the infinite love of instructing a computer. And that’s where I decided to learn how to write programs.\nNow please feel free to explore around and feel a little bit of the enjoyment that I felt when I was a little kid, while trying to know me better.\nYou can start by typing “[[i;;]help]” command to get a list of the available commands, alongside with their descriptions.",
+          // Enabling auto completion. Requires `https://unpkg.com/jquery.terminal/js/autocomplete_menu.js` imported at
+          // the head of the document
+          autocompleteMenu: true,
+          // The list of commands that the auto completion should work with
+          completion: Object.keys(cmds),
         }
-    }, {
-        // The greeting message shown on the top of the terminal
-        greetings: 'Hello! 👋\nMy name is [[g;green;]Ali Azizjahan] and I’m a [[b;;]Software Developer]. I’m also known as [[g;green;]Kyxey]. Now I know this is not a fancy place to meet each other, but this is where I found love! Yes! Digging down my first personal computer as a child, when I reached the command line, I felt the infinite love of instructing a computer. And that’s where I decided to learn how to write programs.\nNow please feel free to explore around and feel a little bit of the enjoyment that I felt when I was a little kid, while trying to know me better.\nYou can start by typing “[[i;;]help]” command to get a list of the available commands, alongside with their descriptions.',
-        // Enabling auto completion. Requires `https://unpkg.com/jquery.terminal/js/autocomplete_menu.js` imported at
-        // the head of the document
-        autocompleteMenu: true,
-        // The list of commands that the auto completion should work with
-        completion: Object.keys(cmds)
-    });
+      );
     </script>
-</body>
-
+  </body>
 </html>
