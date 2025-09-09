@@ -1,248 +1,239 @@
-# Astro Modern Personal Website
+# Ali Azizjahan (Kyxey) - Portfolio Website
 
-![Astro Modern Personal Website](public/social_img.png)
+A modern, responsive portfolio website showcasing the professional experience and skills of Ali Azizjahan (Kyxey), a Software Engineer with 7+ years of experience. Built with Vue.js 3, TypeScript, and Tailwind CSS.
 
-Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
+## 🚀 Features
 
-## Demo
+- **Single Page Application (SPA)** with smooth scroll navigation
+- **Responsive Design** optimized for all devices (mobile-first approach)
+- **Vue.js 3** with Composition API and TypeScript
+- **Custom Color Scheme** using brand colors (Navy #0D1B2A, Slate #415A77, Orange #FC7A1E, Light #D9D9D9)
+- **Dark/Light Theme Toggle** with system preference detection and state persistence
+- **SEO Optimized** for "Ali Azizjahan", "Kyxey", "Azizjahan", and "Software Engineer"
+- **Performance Optimized** with code splitting and lazy loading
+- **Accessibility Compliant** with proper ARIA labels and semantic HTML
+- **Modern Animations** with smooth transitions and scroll effects
+- **Component-based Architecture** with reusable, well-structured components
 
-View a live demo of the [Astro Modern Personal Website](https://astro-modern-personal-website.netlify.app/)
+## 📋 Portfolio Sections
 
-## Installation
+- **Hero Section** - Introduction with profile image, social links, and call-to-action
+- **Summary** - Professional summary with key statistics
+- **Experience** - Timeline-based work history with detailed achievements
+- **Education** - Academic background with grades and institutions
+- **Skills** - Technical skills with icons, organized by category + languages with proficiency levels
+- **Certifications** - Professional certifications with downloadable links
+- **Contact** - Multiple contact methods and social media links
 
-Run the following command in your terminal
+## 🎨 Design System
+
+- **Primary Colors**: Navy, Slate, Orange, Light Gray
+- **Typography**: Inter font family with multiple weights
+- **Components**: Reusable card, button, and navigation components
+- **Animations**: Smooth fade-in, slide-up, and hover effects
+- **Glass Effect**: Modern backdrop blur effects for navigation
+
+## 📋 Prerequisites
+
+- Node.js 18.0.0 or higher
+- pnpm 8.0.0 or higher
+
+## 🛠️ Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <your-repo-url>
+   cd Kyxey.github.io
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up Git hooks (automatic after pnpm install)**
+   ```bash
+   pnpm run prepare
+   ```
+
+## 🚀 Development
+
+### Start Development Server
 
 ```bash
-npm install
+pnpm run dev
 ```
 
-Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
+The application will be available at `http://localhost:3000`
+
+### Build for Production
 
 ```bash
-npm run dev
+pnpm run build
 ```
 
-## Tech Stack
+The built files will be in the `dist/` directory.
 
-- [Astro](https://astro.build)
-- [tailwindcss](https://tailwindcss.com/)
-- [DaisyUI](https://daisyui.com/)
+### Preview Production Build
 
-## Project Strucutre
+```bash
+pnpm run preview
+```
 
+## 🔧 Development Tools
 
-``` php
+### Linting
+
+```bash
+pnpm run lint
+```
+
+Runs ESLint with auto-fix on all TypeScript and Vue files.
+
+### Formatting
+
+```bash
+pnpm run format
+```
+
+Runs Prettier to format all source files.
+
+### Type Checking
+
+```bash
+pnpm run type-check
+```
+
+Runs TypeScript compiler to check for type errors.
+
+## 📁 Project Structure
+
+```
 ├── src/
-│   ├── components/
-│   │   ├── cs/
-│   │   │   ├── TimeLine
-│   │   ├── BaseHead.astro
-│   │   ├── Card.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   └── HorizontalCard.jsx
-│   │   └── SideBar.jsx
-│   ├── content/
-│   │   ├── blog/
-│   │   │   ├── post1.md
-│   │   │   ├── post2.md
-│   │   │   └── post3.md
-│   │   ├── store/
-│   │   │   ├── item1.md
-│   │   │   ├── item2.md
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   │   └── PostLayout.astro
-│   └── pages/
-│   │   ├── blog/
-│   │   │   ├── [...page].astro
-│   │   │   ├── [slug].astro
-│   │   └── cv.astro
-│   │   └── index.astro
-│   │   └── projects.astro
-│   │   └── rss.xml.js
-│   └── styles/
-│       └── global.css
-├── public/
-│   ├── favicon.svg
-│   └── social-image.png
-│   └── sprofile.jpg
-│   └── social_img.webp
-├── astro.config.mjs
-├── tailwind.config.cjs
-├── package.json
-└── tsconfig.json
+│   ├── App.vue              # Main application component
+│   ├── main.ts              # Application entry point
+│   └── style.css            # Global styles with Tailwind
+├── public/                  # Static assets
+├── .husky/                  # Git hooks configuration
+├── .vscode/                 # VS Code settings
+├── dist/                    # Production build output
+├── index.html               # HTML template
+├── package.json             # Dependencies and scripts
+├── tsconfig.json            # TypeScript configuration
+├── vite.config.ts           # Vite configuration
+├── tailwind.config.js       # Tailwind CSS configuration
+├── postcss.config.js        # PostCSS configuration
+├── .eslintrc.cjs            # ESLint configuration
+├── .prettierrc              # Prettier configuration
+├── .gitignore               # Git ignore rules
+└── README.md                # Project documentation
 ```
 
-### Components usage
+## 🎨 Styling
 
-#### Layout Components
+This project uses **Tailwind CSS** with a custom design system:
 
-The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included in the layout sistem. To change the website content you can edit the content of this components.
+- **Primary Colors**: Blue palette (`primary-50` to `primary-900`)
+- **Typography**: Inter font family
+- **Components**: Pre-built component classes (`.btn-primary`, `.card`, etc.)
+- **Utilities**: Custom utility classes (`.text-gradient`)
 
-##### SideBar
+### Custom CSS Classes
 
-In the Sidebar you can change the links to all your website pages.
-
-You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
-
-The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
-
-#### TimeLine
-
-The timeline components are used to conform the CV.
-
-```html
-<div class="time-line-container">
-  <TimeLineElement
-    title="Element Title"
-    subtitle="Subtitle"
-    desc="Description"
-  />
-  ...
-</div>
+```css
+.btn-primary    /* Primary button styling */
+.btn-secondary  /* Secondary button styling */
+.card           /* Card component styling */
+.text-gradient  /* Gradient text effect */
 ```
 
-#### Card & HorizontalCard
+## 🔒 Code Quality
 
-```html
-<HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
-URL" target="Optional link target (_blank default)" badge="Optional badge"
-tags={['Array','of','tags']} />
+### ESLint Rules
+
+- **Vue.js**: Component naming, prop validation, event handling
+- **TypeScript**: Strict type checking, no explicit `any`, proper return types
+- **General**: Code style, best practices, security rules
+
+### Prettier Configuration
+
+- **Semicolons**: Enabled
+- **Quotes**: Single quotes
+- **Line Length**: 80 characters
+- **Tab Width**: 2 spaces
+
+### Pre-commit Hooks
+
+- **lint-staged** runs on staged files
+- **ESLint** auto-fixes issues
+- **Prettier** formats code
+- **TypeScript** type checking
+
+## 🚀 Deployment
+
+### GitHub Pages
+
+1. Build the project: `pnpm run build`
+2. Push the `dist/` folder to the `gh-pages` branch
+3. Configure GitHub Pages to serve from the `gh-pages` branch
+
+### Netlify
+
+1. Connect your repository to Netlify
+2. Set build command: `pnpm run build`
+3. Set publish directory: `dist`
+
+### Vercel
+
+1. Import your repository to Vercel
+2. Framework preset: Vite
+3. Build command: `pnpm run build`
+4. Output directory: `dist`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Run linting: `pnpm run lint`
+5. Run type checking: `pnpm run type-check`
+6. Commit your changes: `git commit -m 'Add amazing feature'`
+7. Push to the branch: `git push origin feature/amazing-feature`
+8. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](../../issues) page
+2. Create a new issue with detailed information
+3. Include your Node.js and pnpm versions
+4. Provide error messages and steps to reproduce
+
+## 🔄 Updates
+
+To update dependencies:
+
+```bash
+pnpm update
+pnpm audit fix
 ```
 
-#### HorizontalCard Shop Item
+## 📊 Performance
 
-This compoenet is already included in the Store layout of the template. In case you want to use it in other place this are the props.
+This project is optimized for performance:
 
-```html
-<HorizontalShopItem
-  title="Item Title"
-  img="imge_url"
-  desc="Item description"
-  pricing="current_price"
-  oldPricing="old_price"
-  checkoutUrl="external store checkout url"
-  badge="Optional badge"
-  details="true"
-  url="item details url"
-  custom_link="Custom link url"
-  custom_link_label="Cutom link btn label"
-  target="Optional link target (_self default)"
-/>
-```
+- **Tree shaking** for smaller bundle sizes
+- **Code splitting** for better loading times
+- **Source maps** for debugging
+- **Optimized builds** with Vite
 
-### Layouts
-
-Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
-
-### Content
-
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
-
-#### config.ts
-Where you need to define your content collections, we define our content schemas too.
-
-#### Blog
-
-Add your `md` blog post in the `/content/blog/` folder.
-
-##### Post format
-
-Add code with this format in the top of each post file.
-
-```
 ---
-title: "Post Title"
-description: "Description"
-pubDate: "Post date format(Sep 10 2022)"
-heroImage: "Post Hero Image URL"
----
-```
 
-### Pages
-
-#### Blog
-
-Blog uses Astro's content collection to query post's `md`.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
-
-##### [slug].astro
-
-The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
-
-#### Shop
-
-Add your `md` item in the `/pages/shop/` folder.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you incle inside this folder.
-
-##### Item format
-
-Add code with this format in the top of each item file.
-
-```js
----
-title: "Demo Item 1"
-description: "Item description"
-heroImage: "Item img url"
-details: true // show or hide details btn
-custom_link_label: "Custom btn link label"
-custom_link: "Custom btn link"
-pubDate: "Sep 15 2022"
-pricing: "$15"
-oldPricing: "$25.5"
-badge: "Featured"
-checkoutUrl: "https://checkouturl.com/"
----
-```
-
-#### Static pages
-
-The other pages inlcuded in the template are static pages. The `index` page belong to the root page. You can add your pages directly in the `/pages` folder and then add a link to that pages in the `sidebar` component.
-
-Feel free to modify the content included in the pages that the template contains or add the ones you need.
-
-### Theming
-
-For change the template theme change the `data-theme` atribute of the `<html>` tag in `BaseLayout.astro` file.
-
-You can chose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
-
-## Sitemap
-
-The Sitemap is generated automatically when you build your website in the root of the domain. Please update the `robots.txt` file in the public folder with your site name URL for the Sitemap.
-
-## Deploy
-
-You can deploy your site on your favorite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
-
-The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
-
-> **⚠️ CAUTION** </br>
-> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
-
-## Contributing
-
-Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
-
-One of the best ways of contribute is to grab a [bug report o feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
-
-Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
-
-## License
-
-Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
-
-## Contributors
-
-<a href="https://github.com/manuelernestog/astro-modern-personal-website/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astro-modern-personal-website" />
-</a>
-
-Made with [contrib.rocks](https://contrib.rocks).
+Built with ❤️ using Vue.js, TypeScript, and Tailwind CSS

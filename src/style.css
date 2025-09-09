@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-navy dark:text-light bg-light dark:bg-navy transition-colors duration-300;
+  }
+
+  * {
+    @apply scroll-smooth;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn {
+    @apply font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center;
+  }
+  .btn-primary {
+    @apply bg-orange hover:bg-orange/90 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-slate hover:bg-slate/90 text-white;
+  }
+
+  .card {
+    @apply bg-white/80 dark:bg-slate/20 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-slate/30 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-navy dark:text-light mb-8 text-center;
+  }
+
+  .nav-link {
+    @apply text-slate dark:text-light/80 hover:text-orange dark:hover:text-orange font-medium transition-colors duration-300 cursor-pointer;
+  }
+
+  .nav-link.active {
+    @apply text-orange font-bold;
+  }
+}
+
+/* Custom utility styles */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-orange to-slate bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-slate to-navy;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80 dark:bg-navy/80 border border-white/20 dark:border-slate/20;
+  }
+}
