@@ -150,3 +150,6 @@ Desktop.ini
 # Temporary folders
 tmp/
 temp/
+
+# OS generated files
+.DS_Store

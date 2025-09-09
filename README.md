@@ -1,17 +1,37 @@
-# Kyxey Personal Website
+# Ali Azizjahan (Kyxey) - Portfolio Website
 
-A modern, responsive personal website built with Vue.js 3, TypeScript, and Tailwind CSS. This project features strict development tools and best practices for a professional development experience.
+A modern, responsive portfolio website showcasing the professional experience and skills of Ali Azizjahan (Kyxey), a Software Engineer with 7+ years of experience. Built with Vue.js 3, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
-- **Vue.js 3** with Composition API
-- **TypeScript** with strict type checking
-- **Tailwind CSS** for utility-first styling
-- **ESLint** with strict rules for code quality
-- **Prettier** for consistent code formatting
-- **Husky** + **lint-staged** for pre-commit hooks
-- **Vite** for fast development and building
-- **Modern tooling** with latest versions
+- **Single Page Application (SPA)** with smooth scroll navigation
+- **Responsive Design** optimized for all devices (mobile-first approach)
+- **Vue.js 3** with Composition API and TypeScript
+- **Custom Color Scheme** using brand colors (Navy #0D1B2A, Slate #415A77, Orange #FC7A1E, Light #D9D9D9)
+- **Dark/Light Theme Toggle** with system preference detection and state persistence
+- **SEO Optimized** for "Ali Azizjahan", "Kyxey", "Azizjahan", and "Software Engineer"
+- **Performance Optimized** with code splitting and lazy loading
+- **Accessibility Compliant** with proper ARIA labels and semantic HTML
+- **Modern Animations** with smooth transitions and scroll effects
+- **Component-based Architecture** with reusable, well-structured components
+
+## 📋 Portfolio Sections
+
+- **Hero Section** - Introduction with profile image, social links, and call-to-action
+- **Summary** - Professional summary with key statistics
+- **Experience** - Timeline-based work history with detailed achievements
+- **Education** - Academic background with grades and institutions
+- **Skills** - Technical skills with icons, organized by category + languages with proficiency levels
+- **Certifications** - Professional certifications with downloadable links
+- **Contact** - Multiple contact methods and social media links
+
+## 🎨 Design System
+
+- **Primary Colors**: Navy, Slate, Orange, Light Gray
+- **Typography**: Inter font family with multiple weights
+- **Components**: Reusable card, button, and navigation components
+- **Animations**: Smooth fade-in, slide-up, and hover effects
+- **Glass Effect**: Modern backdrop blur effects for navigation
 
 ## 📋 Prerequisites
 
