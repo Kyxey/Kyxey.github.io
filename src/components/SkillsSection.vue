@@ -1,6 +1,6 @@
 <template>
   <section class="py-20 bg-white dark:bg-slate/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="section-title">Skills & Languages</h2>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">

@@ -3,7 +3,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="section-title">Summary</h2>
 
-      <div class="card max-w-3xl mx-auto text-center">
+      <div class="card max-w-4xl mx-auto text-center">
         <div class="prose prose-lg mx-auto dark:prose-invert">
           <p class="text-lg leading-relaxed text-slate dark:text-light/90">
             Software Engineer with {{ yearsExperience }}+ years of

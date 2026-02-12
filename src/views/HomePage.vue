@@ -25,6 +25,17 @@
 
       <!-- Contact Section -->
       <ContactSection id="contact" />
+
+      <!-- Blog Section -->
+      <BlogView
+        id="blog"
+        platform="medium"
+        platform-name="Medium"
+        :platform-icon="MediumIcon"
+        :fetch-function="fetchMediumPosts"
+        :username="mediumUsername"
+        :url="mediumURL"
+      />
     </main>
 
     <!-- Footer -->
@@ -53,20 +64,23 @@
 
 <script setup lang="ts">
   import { ref, onMounted, onUnmounted } from 'vue';
-  import { useRouter, useRoute } from 'vue-router';
+  import { useRoute } from 'vue-router';
   import { ChevronUpIcon } from '@heroicons/vue/24/outline';
   import { navigationItems } from '@/consts/navigation';
-  import AppHeader from '../components/AppHeader.vue';
-  import AppFooter from '../components/AppFooter.vue';
-  import HeroSection from '../components/HeroSection.vue';
-  import SummarySection from '../components/SummarySection.vue';
-  import ExperienceSection from '../components/ExperienceSection.vue';
-  import EducationSection from '../components/EducationSection.vue';
-  import SkillsSection from '../components/SkillsSection.vue';
-  import CertificationsSection from '../components/CertificationsSection.vue';
-  import ContactSection from '../components/ContactSection.vue';
+  import AppHeader from '@/components/AppHeader.vue';
+  import AppFooter from '@/components/AppFooter.vue';
+  import HeroSection from '@/components/HeroSection.vue';
+  import SummarySection from '@/components/SummarySection.vue';
+  import ExperienceSection from '@/components/ExperienceSection.vue';
+  import EducationSection from '@/components/EducationSection.vue';
+  import SkillsSection from '@/components/SkillsSection.vue';
+  import CertificationsSection from '@/components/CertificationsSection.vue';
+  import ContactSection from '@/components/ContactSection.vue';
+  import BlogView from '@/views/BlogView.vue';
+  import { fetchMediumPosts } from '@/services/blogService';
+  import { socialLinks } from '@/consts/contacts';
+  import { MediumIcon } from 'vue3-simple-icons';
 
-  const router = useRouter();
   const route = useRoute();
 
   // Active section tracking
@@ -75,13 +89,16 @@
   // Scroll to top button visibility
   const showScrollToTop = ref<boolean>(false);
 
+  // Social media usernames from config
+  const mediumUsername =
+    socialLinks.find(sL => sL.name === 'Medium')?.handle ?? '';
+
+  // Social media URLs from config
+  const mediumURL = socialLinks.find(sL => sL.name === 'Medium')?.url ?? '';
+
   // Handle navigation
   const handleNavigation = (sectionId: string): void => {
-    if (sectionId === 'blog') {
-      router.push('/blog');
-    } else {
-      scrollToSection(sectionId);
-    }
+    scrollToSection(sectionId);
   };
 
   // Smooth scroll to section
@@ -108,9 +125,7 @@
 
   // Track active section on scroll
   const handleScroll = (): void => {
-    const sections = navigationItems
-      .filter(item => item.id !== 'blog')
-      .map(item => item.id);
+    const sections = navigationItems.map(item => item.id);
     const scrollPosition = window.scrollY + 100; // Offset for header
 
     // Show scroll to top button when user scrolls past hero section

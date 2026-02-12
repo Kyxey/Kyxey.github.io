@@ -21,7 +21,7 @@
             ></div>
 
             <!-- Content Card -->
-            <div :class="['card ml-12 md:ml-0 flex-1']">
+            <div :class="['card flex-1']">
               <div
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4"
               >

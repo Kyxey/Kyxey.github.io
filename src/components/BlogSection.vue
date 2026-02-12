@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-16">
+  <div class="gap-6">
     <!-- Section Header -->
     <div class="flex items-center justify-between mb-6">
       <a
@@ -34,7 +34,7 @@
     <div v-else-if="posts.length > 0" class="relative">
       <div
         ref="sliderRef"
-        class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
+        class="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory scroll-smooth"
         style="scrollbar-width: none; -ms-overflow-style: none"
       >
         <PostCard
@@ -48,12 +48,17 @@
           <button
             @click="loadMore"
             :disabled="loading"
-            class="btn btn-primary h-12 w-36"
+            class="btn btn-primary h-12 w-36 mr-10"
           >
             <span v-if="loading">Loading...</span>
             <span v-else>Load More</span>
           </button>
         </div>
+
+        <!-- Shadow -->
+        <div
+          class="h-[95%] w-12 bg-gradient-to-r from-transparent to-black/15 absolute right-0"
+        />
       </div>
     </div>
 
