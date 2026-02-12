@@ -1,11 +1,7 @@
 <template>
   <div class="min-h-screen transition-colors duration-300">
     <!-- Navigation Header -->
-    <AppHeader
-      :navigation-items="navigationItems"
-      :active-section="activeSection"
-      @navigate="handleNavigation"
-    />
+    <AppHeader :active-section="activeSection" @navigate="handleNavigation" />
 
     <!-- Main Content -->
     <main>
@@ -59,6 +55,7 @@
   import { ref, onMounted, onUnmounted } from 'vue';
   import { useRouter, useRoute } from 'vue-router';
   import { ChevronUpIcon } from '@heroicons/vue/24/outline';
+  import { navigationItems } from '@/consts/navigation';
   import AppHeader from '../components/AppHeader.vue';
   import AppFooter from '../components/AppFooter.vue';
   import HeroSection from '../components/HeroSection.vue';
@@ -71,18 +68,6 @@
 
   const router = useRouter();
   const route = useRoute();
-
-  // Navigation items
-  const navigationItems: { name: string; id: string }[] = [
-    { name: 'Home', id: 'hero' },
-    { name: 'Summary', id: 'summary' },
-    { name: 'Experience', id: 'experience' },
-    { name: 'Education', id: 'education' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Certifications', id: 'certifications' },
-    { name: 'Contact', id: 'contact' },
-    { name: 'Blog', id: 'blog' },
-  ];
 
   // Active section tracking
   const activeSection = ref<string>('hero');

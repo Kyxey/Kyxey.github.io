@@ -5,12 +5,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
         <!-- Logo -->
-        <div class="flex items-center">
-          <img :src="isDark ? LogoAccent : LogoDark" alt="Kyxey" class="h-9" />
-        </div>
+        <a class="flex items-center" :href="websiteAddress">
+          <img
+            :src="isDark ? LogoAccent : LogoDark"
+            alt="Kyxey"
+            class="h-9 min-w-24"
+          />
+        </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-8">
+        <nav class="hidden lg:flex space-x-8">
           <button
             v-for="item in navigationItems"
             :key="item.id"
@@ -36,7 +40,7 @@
           <!-- Mobile Menu Button -->
           <button
             @click="toggleMobileMenu"
-            class="md:hidden p-2 rounded-lg bg-slate/10 hover:bg-slate/20 dark:bg-light/10 dark:hover:bg-light/20 transition-colors duration-300"
+            class="lg:hidden p-2 rounded-lg bg-slate/10 hover:bg-slate/20 dark:bg-light/10 dark:hover:bg-light/20 transition-colors duration-300"
           >
             <XMarkIcon v-if="isMobileMenuOpen" class="w-6 h-6" />
             <Bars3Icon v-else class="w-6 h-6" />
@@ -86,14 +90,11 @@
   } from '@heroicons/vue/24/outline';
   import LogoAccent from './assets/img/Logo-Accent.png';
   import LogoDark from './assets/img/Logo-Dark.png';
+  import { navigationItems } from '@/consts/navigation';
 
-  type NavigationItem = {
-    name: string;
-    id: string;
-  };
+  const websiteAddress = window.location.origin;
 
   type Props = {
-    navigationItems: readonly NavigationItem[];
     activeSection: string;
   };
 

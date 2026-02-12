@@ -2,11 +2,7 @@
   <div
     class="min-h-screen transition-colors duration-300 flex flex-col justify-between bg-white dark:bg-slate/15"
   >
-    <AppHeader
-      :navigation-items="navigationItems"
-      :active-section="'blog'"
-      @navigate="handleNavigation"
-    />
+    <AppHeader :active-section="'blog'" @navigate="handleNavigation" />
 
     <main class="pt-24 pb-20 bg-transparent">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,17 +52,6 @@
 
   // Social media URLs from config
   const mediumURL = socialLinks.find(sL => sL.name === 'Medium')?.url ?? '';
-
-  const navigationItems = [
-    { name: 'Home', id: 'hero' },
-    { name: 'Summary', id: 'summary' },
-    { name: 'Experience', id: 'experience' },
-    { name: 'Education', id: 'education' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Certifications', id: 'certifications' },
-    { name: 'Contact', id: 'contact' },
-    { name: 'Blog', id: 'blog' },
-  ];
 
   const handleNavigation = (sectionId: string): void => {
     if (sectionId === 'blog') {
