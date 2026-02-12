@@ -1,12 +1,14 @@
 <template>
-  <div class="min-h-screen transition-colors duration-300">
+  <div
+    class="min-h-screen transition-colors duration-300 flex flex-col justify-between bg-white dark:bg-slate/15"
+  >
     <AppHeader
       :navigation-items="navigationItems"
       :active-section="'blog'"
       @navigate="handleNavigation"
     />
 
-    <main class="pt-24 pb-20 bg-white dark:bg-slate/15">
+    <main class="pt-24 pb-20 bg-transparent">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Page Header -->
         <div class="text-center mb-16">
