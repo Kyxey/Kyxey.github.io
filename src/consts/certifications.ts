@@ -39,6 +39,16 @@ const certifications: Certification[] = [
       'Anonymous Browsing - Privacy protection and secure browsing techniques.',
     link: 'https://docs.google.com/feeds/download/presentations/Export?id=17cG0aVCpImo7OXGPPgybaxFbaGoZVSryZTGeJc_b0xA&exportFormat=pdf',
   },
+  {
+    title: 'Foundation - Introduction to LangChain - Python',
+    provider: {
+      name: 'LangChain',
+      url: 'https://langchain.com',
+    },
+    description:
+      'Building AI Agents - Quick start using pre-built architectures and model integrations.',
+    link: 'https://academy.langchain.com/certificates/plx9ngbozf',
+  },
 ];
 
 export { certifications, type Certification };

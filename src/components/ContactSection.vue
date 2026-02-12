@@ -35,7 +35,7 @@
                   :href="item.href"
                   :target="item.external ? '_blank' : ''"
                   :rel="item.external ? 'noopener noreferrer' : ''"
-                  class="block text-slate dark:text-light/80 hover:text-orange transition-colors duration-300"
+                  class="block text-slate dark:text-light/80 hover:text-orange dark:hover:text-light transition-colors duration-300"
                 >
                   <div class="flex items-center">
                     {{ item.value }}

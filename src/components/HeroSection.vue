@@ -49,7 +49,7 @@
             class="btn btn-secondary"
           >
             <DocumentArrowDownIcon class="w-5 h-5 mr-2" />
-            Download Resume
+            Download CV
           </a>
         </div>
       </div>
