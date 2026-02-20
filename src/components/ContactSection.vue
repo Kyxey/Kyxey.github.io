@@ -93,5 +93,5 @@
 
 <script setup lang="ts">
   import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline';
-  import { contactMethods, socialLinks } from '../consts/contacts';
+  import { contactMethods, socialLinks } from '@/consts/contacts';
 </script>

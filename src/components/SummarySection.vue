@@ -6,11 +6,7 @@
       <div class="card max-w-4xl mx-auto text-center">
         <div class="prose prose-lg mx-auto dark:prose-invert">
           <p class="text-lg leading-relaxed text-slate dark:text-light/90">
-            Software Engineer with {{ yearsExperience }}+ years of
-            industry-proven work experience. I love computer science and
-            cutting-edge technologies in general. My biggest strengths are my
-            willpower, perseverance and consistency. I believe with continuous
-            effort and study, any knowledge is acquirable.
+            {{ summary }}
           </p>
         </div>
 
@@ -47,8 +43,9 @@
 </template>
 
 <script setup lang="ts">
-  import { experiences, yearsExperience } from '../consts/experiences';
-  import { technicalSkills, languages } from '../consts/skills';
+  import { experiences, yearsExperience } from '@/consts/experiences';
+  import { summary } from '@/consts/summary';
+  import { technicalSkills, languages } from '@/consts/skills';
 
   const totalSkills = technicalSkills.length + languages.length;
 </script>

@@ -36,7 +36,7 @@
           >
             <div class="flex items-center">
               <AcademicCapIcon class="w-5 h-5 text-orange mr-2" />
-              <span class="text-sm text-slate dark:text-light/80">Grade</span>
+              <span class="text-sm text-slate dark:text-light/80">GPA</span>
             </div>
             <div class="text-lg font-bold text-orange">
               {{ education.grade }}

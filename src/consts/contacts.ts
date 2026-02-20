@@ -1,4 +1,8 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline';
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  GlobeAltIcon,
+} from '@heroicons/vue/24/outline';
 import {
   GitHubIcon,
   MediumIcon,
@@ -24,6 +28,7 @@ type SocialLink = {
   handle: string;
   url: string;
   icon: Component | string;
+  friendlyURL: string;
 };
 
 const contactMethods: ContactMethod[] = [
@@ -69,38 +74,58 @@ const socialLinks: SocialLink[] = [
     name: 'Telegram',
     handle: '@kyxey',
     url: 'https://t.me/+989120550508',
+    friendlyURL: 'www.t.me/+989120550508',
     icon: TelegramIcon,
   },
   {
     name: 'WhatsApp',
     handle: '+98-912-055-0508',
     url: 'https://wa.me/989120550508',
+    friendlyURL: 'www.wa.me/989120550508',
     icon: WhatsAppIcon,
   },
   {
     name: 'GitHub',
     handle: '@kyxey',
     url: 'https://www.github.com/kyxey',
+    friendlyURL: 'www.github.com/kyxey',
     icon: GitHubIcon,
   },
   {
     name: 'GitLab',
     handle: '@kyxey',
     url: 'https://www.gitlab.com/kyxey',
+    friendlyURL: 'www.gitlab.com/kyxey',
     icon: GitLabIcon,
   },
   {
     name: 'LinkedIn',
     handle: '@kyxey',
     url: 'https://www.linkedin.com/in/kyxey',
+    friendlyURL: 'linkedin.com/in/kyxey',
     icon: LinkedinIcon,
   },
   {
     name: 'Medium',
     handle: '@kyxey',
     url: 'https://kyxey.medium.com',
+    friendlyURL: 'www.kyxey.medium.com',
     icon: MediumIcon,
   },
 ];
 
-export { contactMethods, socialLinks, type ContactMethod, type SocialLink };
+const portfolio: SocialLink = {
+  name: 'Portfolio',
+  handle: 'https://www.kyxey.com',
+  url: 'https://www.kyxey.com',
+  friendlyURL: 'kyxey.com',
+  icon: GlobeAltIcon,
+};
+
+export {
+  contactMethods,
+  socialLinks,
+  portfolio,
+  type ContactMethod,
+  type SocialLink,
+};
