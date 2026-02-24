@@ -12,6 +12,7 @@ export default {
       slate: '#415A77',
       orange: '#FC7A1E',
       light: '#D9D9D9',
+      blue: '#2776ea',
       gray: {
         50: '#f9fafb',
         100: '#f3f4f6',

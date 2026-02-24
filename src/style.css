@@ -21,6 +21,12 @@
   a {
     @apply cursor-pointer;
   }
+  .cv-container {
+    @apply text-xs;
+  }
+  .cv-container a {
+    @apply text-navy underline;
+  }
 }
 
 /* Custom component styles */
@@ -50,6 +56,12 @@
 
   .nav-link.active {
     @apply text-orange font-bold;
+  }
+  .cv-container .contact-item {
+    @apply flex items-center justify-between gap-1 mr-2;
+  }
+  .cv-container .experience-item:not(:last-child) {
+    @apply pb-2 border-b border-dashed;
   }
 }
 
