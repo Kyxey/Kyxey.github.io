@@ -19,9 +19,9 @@ const experiences: Experience[] = [
     description:
       'A consultancy company specializing in creation of high-quality software solutions across various industries.',
     achievements: [
-      'Spearheaded architectural and performance improvements, reducing bundle size by 12% and boosting development efficiency by 30%.',
-      'Delivered 100+ features with zero critical bugs, contributing to a 25% user growth and enhancing satisfaction for 5,000+ users in Germany.',
-      'Led and mentored a small team to optimize workflows, improve communication, and drive consistent, high-quality project outcomes.',
+      'Improved architecture and performance, reducing bundle size by 12% and boosting development efficiency by 30%.',
+      'Delivered 100+ features with no critical bugs, contributing to a 25% user growth and enhancing satisfaction for 5,000+ users.',
+      'Led and mentored a small team to optimize workflows, improve communication, and drive consistent, high-quality outcomes.',
     ],
   },
   {
@@ -33,7 +33,7 @@ const experiences: Experience[] = [
       'SPG provides software solutions and consulting services to multiple customers and companies across Austria.',
     achievements: [
       'Reverse-engineered and redeveloped a complex web application using new tools, achieving high client satisfaction.',
-      'Delivered fast-paced, cross-functional projects on time through strong collaboration across frontend and backend teams in a multicultural environment.',
+      'Delivered fast-paced, cross-functional projects on time through strong collaboration across multicultural teams.',
       'Combined technical expertise with effective communication to maintain and scale multiple production-grade applications.',
     ],
   },
@@ -69,9 +69,9 @@ const experiences: Experience[] = [
     description:
       'Developed various projects as a freelancer that helped small businesses, while learning the technologies.',
     achievements: [
-      'Developed automated solutions leveraging social media integrations, including a bot that generated $2K in recurring profit for a small business.',
+      'Developed automated solutions leveraging social media integrations, resulting in $2K in recurring profit for a small business.',
       'Contributed to open-source projects and built practical applications to strengthen full-stack development expertise.',
-      'Continuously expanded technical proficiency through hands-on projects, emphasizing scalable and maintainable software design.',
+      'Expanded technical proficiency through various startup teams, emphasizing scalable and maintainable software design.',
     ],
   },
 ];

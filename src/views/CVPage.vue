@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-w-full max-w-full overflow-hidden mx-auto bg-white flex flex-col px-6 py-4 gap-2 min-h-screen cv-container"
+    class="min-w-full max-w-full overflow-hidden mx-auto bg-white flex flex-col p-6 gap-2 min-h-screen cv-container"
   >
     <!-- Name and title -->
     <div>
@@ -104,7 +104,7 @@
       </section>
 
       <!-- Languages -->
-      <section class="mt-6">
+      <section>
         <h3 :class="styles.sectionTitle">LANGUAGES</h3>
         <div class="flex justify-between">
           <div v-for="language in languages" :key="language.name">
@@ -115,7 +115,7 @@
       </section>
 
       <!-- Certificates -->
-      <section>
+      <section class="mt-14">
         <h3 :class="styles.sectionTitle">CERTIFICATES</h3>
         <div
           v-for="certificate in certifications"
