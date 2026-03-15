@@ -31,8 +31,8 @@
         <p
           class="text-xl md:text-2xl text-light/90 mb-8 max-w-xl mx-auto animate-slide-up"
         >
-          Software Engineer with {{ yearsExperience }}+ years of industry-proven
-          work experience
+          {{ age }} years old Software Engineer with {{ yearsExperience }}+
+          years of industry-proven work experience
         </p>
 
         <!-- CTA Buttons -->
@@ -73,7 +73,8 @@
     DocumentArrowDownIcon,
     ChevronDownIcon,
   } from '@heroicons/vue/24/outline';
-  import { yearsExperience } from '../consts/experiences';
+  import { yearsExperience } from '@/consts/experiences';
+  import { age } from '@/consts/summary';
 
   const scrollToContact = (): void => {
     const contactSection = document.getElementById('contact');

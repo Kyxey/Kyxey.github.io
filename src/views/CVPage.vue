@@ -6,6 +6,10 @@
     <div>
       <h1 class="font-bold text-3xl">Ali Azizjahan</h1>
       <p class="font-semibold text-blue">Software Engineer</p>
+      <p class="font-semibold text-slate">
+        {{ dob.toLocaleDateString('nl-NL') }}
+        ({{ age }} years old)
+      </p>
     </div>
 
     <!-- Contact info -->
@@ -115,7 +119,7 @@
       </section>
 
       <!-- Certificates -->
-      <section class="mt-14">
+      <section class="mt-12">
         <h3 :class="styles.sectionTitle">CERTIFICATES</h3>
         <div
           v-for="certificate in certifications"
@@ -137,7 +141,7 @@
 
 <script setup lang="ts">
   import { contactMethods, socialLinks, portfolio } from '@/consts/contacts';
-  import { summary } from '@/consts/summary';
+  import { summary, dob, age } from '@/consts/summary';
   import { technicalSkills, languages } from '@/consts/skills';
   import { experiences } from '@/consts/experiences';
   import { educationList } from '@/consts/educations';

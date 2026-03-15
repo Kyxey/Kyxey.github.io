@@ -15,7 +15,7 @@ const experiences: Experience[] = [
     title: 'Software Engineer',
     company: 'Fakir Technology Consultants GmbH',
     location: 'Sulzbach, Germany (Remote)',
-    duration: 'January 2024 - Present',
+    duration: 'January 2024 - March 2026 (2y 3m)',
     description:
       'A consultancy company specializing in creation of high-quality software solutions across various industries.',
     achievements: [
