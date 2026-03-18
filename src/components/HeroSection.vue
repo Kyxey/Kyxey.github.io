@@ -24,7 +24,7 @@
           <span
             class="block text-2xl md:text-3xl lg:text-4xl text-orange font-medium mt-2"
           >
-            (Kyxey)
+            KYXEY
           </span>
         </h1>
 

@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
   type Props = {
-    color: 'light' | 'white';
+    color: 'light' | 'white' | 'dark';
     direction: 'up' | 'down';
     side: 'left' | 'right';
     isAbsolute?: boolean;
@@ -36,6 +36,10 @@
     white: {
       up: 'border-b-transparent border-t-white dark:border-t-slate/10',
       down: 'border-t-transparent border-b-white dark:border-b-slate/10',
+    },
+    dark: {
+      up: 'border-b-transparent border-t-navy dark:border-t-black',
+      down: 'border-t-transparent border-b-navy dark:border-b-black',
     },
   };
   const positionClass = isAbsolute ? 'absolute bottom-0' : 'relative';

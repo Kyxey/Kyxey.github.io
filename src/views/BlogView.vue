@@ -23,7 +23,7 @@
       </div>
     </div>
   </section>
-  <Pivot color="white" direction="down" side="right" />
+  <Pivot color="dark" direction="down" side="right" />
 </template>
 
 <script setup lang="ts">
