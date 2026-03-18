@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 bg-light dark:bg-navy">
+  <section class="pt-10 pb-20 bg-light dark:bg-navy">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="section-title">Blog & Articles</h2>
 
@@ -23,12 +23,14 @@
       </div>
     </div>
   </section>
+  <Pivot color="white" direction="down" side="right" />
 </template>
 
 <script setup lang="ts">
-  import BlogSection from '../components/BlogSection.vue';
-  import { fetchMediumPosts } from '../services/blogService';
+  import BlogSection from '@/components/BlogSection.vue';
+  import { fetchMediumPosts } from '@/services/blogService';
   import { socialLinks } from '@/consts/contacts';
+  import Pivot from '@/components/PivotComponent.vue';
 
   // Platform icons
   import { MediumIcon } from 'vue3-simple-icons';

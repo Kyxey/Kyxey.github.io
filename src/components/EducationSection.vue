@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 bg-light dark:bg-navy">
+  <section class="pt-10 pb-20 bg-light dark:bg-navy">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="section-title">Education</h2>
 

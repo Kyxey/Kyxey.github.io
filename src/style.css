@@ -11,7 +11,7 @@
   }
 
   body {
-    @apply antialiased text-navy dark:text-light bg-light dark:bg-navy transition-colors duration-300;
+    @apply antialiased text-navy dark:text-light bg-light dark:bg-navy transition-colors duration-300 overflow-x-hidden;
   }
 
   * {

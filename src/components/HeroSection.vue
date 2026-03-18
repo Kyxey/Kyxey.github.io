@@ -53,17 +53,20 @@
           </a>
         </div>
       </div>
-    </div>
-    <!-- Scroll Indicator -->
-    <a href="#summary">
+      <!-- Scroll Indicator -->
       <div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        class="w-full flex items-center justify-center mt-12 animate-fade-in"
       >
-        <ChevronDownIcon class="w-6 h-6 text-light/70 -mb-4" />
-        <ChevronDownIcon class="w-6 h-6 text-light/70 -mb-4" />
-        <ChevronDownIcon class="w-6 h-6 text-light/70" />
+        <a href="#summary">
+          <div class="animate-bounce">
+            <ChevronDownIcon class="w-6 h-6 text-light/70 -mb-4" />
+            <ChevronDownIcon class="w-6 h-6 text-light/70 -mb-4" />
+            <ChevronDownIcon class="w-6 h-6 text-light/70" />
+          </div>
+        </a>
       </div>
-    </a>
+    </div>
+    <Pivot color="light" direction="down" side="left" is-absolute />
   </section>
 </template>
 
@@ -75,6 +78,7 @@
   } from '@heroicons/vue/24/outline';
   import { yearsExperience } from '@/consts/experiences';
   import { age } from '@/consts/summary';
+  import Pivot from './PivotComponent.vue';
 
   const scrollToContact = (): void => {
     const contactSection = document.getElementById('contact');
