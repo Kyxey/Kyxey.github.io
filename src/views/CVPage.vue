@@ -119,7 +119,7 @@
       </section>
 
       <!-- Certificates -->
-      <section class="mt-12">
+      <section v-if="certifications.length > 0" class="mt-12">
         <h3 :class="styles.sectionTitle">CERTIFICATES</h3>
         <div
           v-for="certificate in certifications"
